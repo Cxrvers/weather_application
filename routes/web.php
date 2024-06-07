@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $viewData = [];
+    $viewData["title"] = "Home Page - Weather App";
+    return view('home.index')->with("viewData", $viewData);
 });
